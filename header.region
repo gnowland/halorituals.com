@@ -35,8 +35,10 @@
 										<h1 id="site-title" class="page-title"><a href="/" rel="bookmark">{siteTitle}</a></h1>
 									</div>
 					        {.end}
-
-					    		<squarespace:navigation navigationId="mainNav" template="main-navigation" />
+									<div  id="site-menu-wrapper">
+					    			<squarespace:navigation navigationId="mainNav" template="main-navigation" />
+										<squarespace:navigation navigationId="secondaryNav" template="secondary-navigation" />
+									</div>
 				          {.if socialAccounts}
 			            <div id="sqs-social" class="social-links sqs-svg-icon--list" data-content-field="connected-accounts">
         						{@|apply sqs-social-links}
