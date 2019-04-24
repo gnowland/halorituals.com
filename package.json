@@ -10,8 +10,8 @@
   "private": true,
   "scripts": {
     "build": "squarespace assemble && webpack --display-modules",
-    "watch": "squarespace assemble --watch & webpack --watch --hide-modules",
-    "server": "squarespace runserver",
+    "watch": "squarespace assemble --watch --trigger-reload & webpack --watch --hide-modules",
+    "server": "squarespace runserver --trigger-reload",
     "authserver": "squarespace runserver --auth",
     "start": "squarespace setup && (npm run watch & npm run server)",
     "start:auth": "squarespace setup && (npm run watch & npm run authserver)",
