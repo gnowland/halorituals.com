@@ -1,8 +1,11 @@
 {
-  "name": "npm-base-template",
+  "name": "halorituals.com",
   "version": "1.0.0",
-  "description": "Squarespace Base Template using NPM",
+  "description": "Based on Squarespace's Five Template",
   "author": "Squarespace, Inc.",
+  "contributors": [
+    "Gifford Nowland <hi@giffordnowland.com> (https://giffordnowland.com)"
+  ],
   "license": "Apache-2.0",
   "private": true,
   "scripts": {
@@ -17,7 +20,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "ssh://git@github.com:squarespace/base-template-npm.git"
+    "url": "ssh://git@github.com:gnowland/halorituals.com.git"
   },
   "dependencies": {
     "@squarespace/core": "^1.1.0"
