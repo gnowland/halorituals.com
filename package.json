@@ -10,6 +10,7 @@
   "private": true,
   "scripts": {
     "build": "squarespace assemble && webpack --display-modules",
+    "clean": "squarespace clean",
     "watch": "squarespace assemble --watch --trigger-reload & webpack --watch --hide-modules",
     "server": "squarespace runserver --trigger-reload",
     "authserver": "squarespace runserver --auth",
