@@ -36,3 +36,20 @@ body.banner-content-empty.canvas-setting-full-width.top-navigation-alignment-lef
   }
 }
 
+// Fade-in sign-in link
+#account-navigation {
+  display: inline-block;
+}
+.user-account-link {
+  opacity: 0;
+
+  &.loaded {
+    opacity: 1;
+    transition: 100ms opacity linear;
+  }
+
+  a {
+    color: #ddd;
+  }
+}
+
