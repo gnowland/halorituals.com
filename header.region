@@ -29,23 +29,28 @@
 				    		<!-- // logo or site title markup in nav area -->
 					      {.section website}
 					      	{.if logoImageUrl}
+
 						      <div id="banner-wrapper" data-content-field="site-title">
 						        <a href="/"><img id="banner" src="{logoImageUrl}?format=1500w" alt="{siteTitle}" /></a>
 						      </div>
 					        {.or}
+					        
 									<div id="site-title-wrapper" data-content-field="site-title">
 										<h1 id="site-title" class="page-title"><a href="/" rel="bookmark">{siteTitle}</a></h1>
 									</div>
 					        {.end}
-									<div  id="site-menu-wrapper">
+
+									<div id="site-menu-wrapper">
 					    			<squarespace:navigation navigationId="mainNav" template="main-navigation" />
 										<squarespace:navigation navigationId="secondaryNav" template="secondary-navigation" />
 									</div>
 				          {.if socialAccounts}
+				          
 			            <div id="sqs-social" class="social-links sqs-svg-icon--list" data-content-field="connected-accounts">
         						{@|apply sqs-social-links}
 			            </div>
 				          {.end}
+
 					      {.end}
 
 				    	</div>
@@ -114,7 +119,7 @@
 					        </div>
 					        {.end}
 
-									<div  id="site-menu-wrapper">
+									<div id="site-menu-wrapper">
 					    			<squarespace:navigation navigationId="mainNav" template="main-navigation" />
 										<squarespace:navigation navigationId="secondaryNav" template="secondary-navigation" />
 									</div>
