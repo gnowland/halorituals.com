@@ -11,3 +11,28 @@
     clear: both;
   }
 }
+
+@media screen and (min-width: 641px) {
+  .horizontal-navigation-bar {
+    display: flex;
+    align-items: center;
+  }
+}
+
+body.banner-content-site-title-logo-tagline.canvas-setting-site-width.top-navigation-alignment-left .horizontal-navigation-bar nav, 
+body.banner-content-page-title-description.canvas-setting-full-width.top-navigation-alignment-left .horizontal-navigation-bar nav, 
+body.banner-content-empty.canvas-setting-full-width.top-navigation-alignment-left .horizontal-navigation-bar nav {
+  padding-right: 0;
+}
+
+@media screen and (max-width: 840px) {
+  body.banner-content-site-title-logo-tagline.canvas-setting-site-width.top-navigation-alignment-left #site-title-wrapper, 
+  body.banner-content-page-title-description.canvas-setting-full-width.top-navigation-alignment-left #site-title-wrapper, 
+  body.banner-content-empty.canvas-setting-full-width.top-navigation-alignment-left #site-title-wrapper, 
+  body.banner-content-site-title-logo-tagline.canvas-setting-site-width.top-navigation-alignment-left #banner-wrapper, 
+  body.banner-content-page-title-description.canvas-setting-full-width.top-navigation-alignment-left #banner-wrapper, 
+  body.banner-content-empty.canvas-setting-full-width.top-navigation-alignment-left #banner-wrapper {
+    margin-right: 8.587%;
+  }
+}
+
