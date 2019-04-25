@@ -56,9 +56,10 @@ body.banner-content-empty.canvas-setting-full-width.top-navigation-alignment-lef
 // Show cart at all times
 // specificity so it only affects the page if the user menu is active
 .sqs-pill-shopping-cart {
-  display: block!important;
   visibility: visible!important;
   opacity: 1!important;
+  display: flex!important;
+  align-items: center;
   
   // .sqs-pill-shopping-cart-content
   min-width: 0;
@@ -77,6 +78,10 @@ body.banner-content-empty.canvas-setting-full-width.top-navigation-alignment-lef
   background-color: #111;
   background-image: linear-gradient(#1e1e1e,#040404);
 
+  .icon {
+    top: 2px;
+  }
+
   .subtotal {
     position: static;
     margin-left: 12px;
@@ -92,7 +97,6 @@ body.banner-content-empty.canvas-setting-full-width.top-navigation-alignment-lef
   border-radius: 0;
   height: auto;
   padding: 0;
-  display: inline-block;
   display: flex;
   align-items: baseline;
   transform: scale(1);
