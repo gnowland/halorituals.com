@@ -29,9 +29,16 @@ const loadAllImages = () => {
   }
 }
 
+const accountMenu = () => {
+  const accountMenu = document.getElementById('account-navigation');
+  const cart = document.getElementsByClassName('sqs-pill-shopping-cart')[0];
+  cart.prepend(accountMenu);
+}
+
 // The event subscription that fires when the page is ready
 window.addEventListener('DOMContentLoaded', function () {
   loadAllImages();
+  accountMenu();
 });
 
 // The event subscription that fires when the page is resized
