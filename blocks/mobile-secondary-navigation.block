@@ -1,4 +1,5 @@
 {.if items}
+  <ul class="mobile-secondary-navigation">
   {.repeated section items}
     <li class="{.section active} active-link{.end}{.if folderActive} active-folder{.end}">
       {.folder?}
@@ -22,4 +23,5 @@
       {.end}
     </li>
   {.end}
+  </ul>
 {.end}

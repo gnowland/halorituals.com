@@ -3,7 +3,7 @@
 <nav id="mobile-navigation">
   <span id="mobile-navigation-title">{.if website.siteTitle}<a href="/">{website.siteTitle}</a>{.end}</span>
   <span id="mobile-navigation-label"></span>
-  <ul>
+  <ul class="mobile-primary-navigation">
     {.repeated section items}
       <li class="{.section active} active-link{.end}{.if folderActive} active-folder{.end}">
         {.folder?}
@@ -27,17 +27,19 @@
         {.end}
       </li>
     {.end}
+  </ul>
 
-    <squarespace:navigation navigationId="secondaryNav" template="mobile-secondary-navigation" />
+  <squarespace:navigation navigationId="secondaryNav" template="mobile-secondary-navigation" />
 
-    {.if websiteSettings.userAccountsSettings.loginAllowed}
+  {.if websiteSettings.userAccountsSettings.loginAllowed}
+    <ul class="mobile-account-navigation">
       <li class="user-account-link">
         <a href="#"><i class="icon-user"></i>
           <span class="sign-in">Sign In</span>
           <span class="my-account">My Account</span>
         </a>
       </li>
-    {.end}
-  </ul>
+    </ul>
+  {.end}
 </nav>
 {.end}

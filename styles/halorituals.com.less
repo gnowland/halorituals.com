@@ -36,6 +36,20 @@ body.banner-content-empty.canvas-setting-full-width.top-navigation-alignment-lef
   }
 }
 
+#mobile-navigation.sqs-mobile-nav-open ul {
+  &.mobile-secondary-navigation,
+  &.mobile-account-navigation {
+    margin-top: 0;
+    &:before {
+      content: '';
+      display: block;
+      width: 75%;
+      margin: 3px auto;
+      border-bottom: 1px solid #ddd;
+    }
+  }
+}
+
 #account-navigation {
   display: none;
 }
