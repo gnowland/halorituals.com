@@ -29,19 +29,17 @@ const loadAllImages = () => {
   }
 }
 
+let accountMenuDone = false;
 const accountMenu = () => {
   const accountMenu = document.getElementById('account-navigation');
   const cart = document.getElementsByClassName('sqs-pill-shopping-cart')[0];
 
-  if (typeof cart === "undefined") {
-    console.log('cart undefined');
-    return;
-  } else {
-    console.log('cart DEFINED!');
-  }
+  // Bail if cart lement does not exist or this scrip has ran already
+  if (typeof cart === "undefined" || accountMenuDone === true) return;
 
   // Add account menu to cart
   cart.prepend(accountMenu);
+  accountMenuDone = true;
 
   // Set tabindex for accessability
   cart.getElementsByClassName('sqs-pill-shopping-cart-content')[0].tabIndex = 0;
