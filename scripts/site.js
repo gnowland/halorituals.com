@@ -22,11 +22,6 @@ const cartExists = new MutationObserver((mutations, me) => {
 
 const accountMenu = (cart) => {
   const accountMenu = document.getElementById('account-navigation');
-  // Bail if cart lement does not exist or this scrip has ran already
-  if (typeof cart === "undefined") {
-    console.log('nocart');
-    return;
-  }
 
   // Add account menu to cart
   cart.prepend(accountMenu);
@@ -55,9 +50,8 @@ const accountMenu = (cart) => {
 
 const init = () => {
   // start observing
-  cartExists.observe(document, {
-    childList: true,
-    subtree: true
+  cartExists.observe(document.body, {
+    childList: true
   });
 };
 
