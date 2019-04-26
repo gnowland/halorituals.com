@@ -36,6 +36,8 @@ const accountMenu = () => {
   if (typeof cart === "undefined") {
     console.log('cart undefined');
     return;
+  } else {
+    console.log('cart DEFINED!');
   }
 
   // Add account menu to cart
