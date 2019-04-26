@@ -186,8 +186,36 @@ body.banner-content-empty.canvas-setting-full-width.top-navigation-alignment-lef
     background-color: rgba(17, 17, 17, 1);
   }
 }
-@media only screen and (min-width: 700px) {
+@media only screen and (min-width: 701px) {
   .top-navigation-position-above-banner .absolute-cart-box {
     top: 13px;
+  }
+
+  // Light cart styles
+  .user-account-link {
+    .placeholder {
+      color: #d1d1d1;
+    }
+    a {
+      color: #333;
+      &:hover,
+      &:focus {
+        color: @navLinkHoverColor;
+      }
+    }
+  }
+  .sqs-pill-shopping-cart {
+    box-shadow: none;
+    border: 1px solid rgba(255,255,255, .05);
+    color: #333;
+    background-color: rgba(255,255,255, .92);
+
+    #account-navigation {
+      border-right: 1px solid #d1d1d1;
+    }
+  }
+  .sqs-pill-shopping-cart-content {
+    &.dark:hover,
+    &:hover { color: @navLinkHoverColor; }
   }
 }
