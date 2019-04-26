@@ -10,6 +10,7 @@
   "private": true,
   "scripts": {
     "build": "squarespace assemble && webpack --display-modules",
+    "build:prod": "squarespace assemble &&cross-env NODE_ENV=production webpack --display-modules",
     "clean": "squarespace clean",
     "watch": "squarespace assemble --watch --trigger-reload & webpack --watch --hide-modules",
     "server": "squarespace runserver --trigger-reload",
@@ -17,7 +18,7 @@
     "start": "squarespace setup && (npm run watch & npm run server)",
     "start:auth": "squarespace setup && (npm run watch & npm run authserver)",
     "deploysite": "squarespace setup && squarespace deploy",
-    "deploy:prod": "npm run clean && cross-env NODE_ENV=production && npm run build && npm run deploysite",
+    "deploy:prod": "npm run clean && npm run build:prod && npm run deploysite",
     "deploy": "npm run clean && npm run build && npm run deploysite"
   },
   "repository": {

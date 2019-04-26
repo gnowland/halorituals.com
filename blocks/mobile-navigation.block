@@ -29,7 +29,7 @@
     {.end}
     {.if websiteSettings.userAccountsSettings.loginAllowed}
       <li class="user-account-link">
-        <a href="#">
+        <a href="#"><i class="icon-user"></i>
           <span class="sign-in">Sign In</span>
           <span class="my-account">My Account</span>
         </a>
