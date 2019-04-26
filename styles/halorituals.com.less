@@ -210,7 +210,9 @@ body.banner-content-empty.canvas-setting-full-width.top-navigation-alignment-lef
     }
   }
   .sqs-pill-shopping-cart-content {
-    &.dark:hover,
-    &:hover { color: @navLinkHoverColor; }
+    &.dark:hover, &.dark:focus,
+    &:hover, &:focus { 
+      color: @navLinkHoverColor;
+    }
   }
 }
