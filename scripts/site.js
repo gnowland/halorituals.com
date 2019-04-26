@@ -32,10 +32,16 @@ const loadAllImages = () => {
 const accountMenu = () => {
   const accountMenu = document.getElementById('account-navigation');
   const cart = document.getElementsByClassName('sqs-pill-shopping-cart')[0];
+
+  // Add account menu to cart
   cart.prepend(accountMenu);
   
   // Set tabindex for accessability
   cart.getElementsByClassName('sqs-pill-shopping-cart-content')[0].tabIndex = 0;
+
+  // Replace default cart icon with FontAwesome icon
+  const cartIcon = cart.getElementsByClassName('icon')[0];
+  cartIcon.classList.add('icon-shopping-cart');
 
   // hide items and subtotal if cart empty
   const items = cart.getElementsByClassName('total-quantity')[0].textContent;
