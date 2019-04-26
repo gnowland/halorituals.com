@@ -1,7 +1,7 @@
 {.if websiteSettings.userAccountsSettings.loginAllowed}
 <nav id="account-navigation" class="account-nav" data-content-field="navigation">
   <ul>
-  {.if websiteSettings.userAccountsSettings.loginAllowed}<li class="user-account-link"><a href="#"><span class="sign-in"><i class="icon-user"></i><span class="sr-only">Sign In</span></span><span class="my-account"><i class="icon-user"></i><span class="sr-only">My Account</span></span></a></li>{.end}
+  {.if websiteSettings.userAccountsSettings.loginAllowed}<li class="user-account-link"><i class="icon-user placeholder"></i><a href="#"><span class="sign-in"><i class="icon-user"></i><span class="sr-only">Sign In</span></span><span class="my-account"><i class="icon-user"></i><span class="sr-only">My Account</span></span></a></li>{.end}
   </ul>
 </nav>
 {.end}
