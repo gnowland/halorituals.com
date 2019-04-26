@@ -74,8 +74,8 @@ window.addEventListener('DOMContentLoaded', () => {
 
 // The event subscription that fires when the page is ready
 // Wait for Squarespace to initilize first
-window.Squarespace.onInitialize(Y, () => {
-  init();
+window.Squarespace.onInitialize(Y, function () {
+  window.addEventListener('DOMContentLoaded', init);
 });
 
 // The event subscription that fires when the page is resized
