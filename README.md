@@ -1,4 +1,4 @@
-# Five Template (~~npm~~ yarn version)
+# ~~Base~~ Five Template (~~npm~~ yarn version)
 
 This is the Squarespace Five Template, a minimal Squarespace template using **_Node Package Manager_** for local development, module installation and deployment.
 
