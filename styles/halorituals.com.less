@@ -39,8 +39,12 @@ body.banner-content-empty.canvas-setting-full-width.top-navigation-alignment-lef
 // Fade-in sign-in link
 #account-navigation {
   display: inline-block;
+  border-right: 1px solid #888;
+  padding-right: 10px;
 }
+
 .user-account-link {
+  font-size: 18px;
 
   .placeholder {
     cursor: default;
@@ -50,6 +54,10 @@ body.banner-content-empty.canvas-setting-full-width.top-navigation-alignment-lef
   a {
     display: none;
     color: #ddd;
+    &:hover,
+    &:focus {
+      color: #fff;
+    }
   }
 
   &.loaded {
