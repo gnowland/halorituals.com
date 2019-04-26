@@ -33,6 +33,10 @@ const accountMenu = () => {
   const accountMenu = document.getElementById('account-navigation');
   const cart = document.getElementsByClassName('sqs-pill-shopping-cart')[0];
   cart.prepend(accountMenu);
+  
+  // Set tabindex for accessability
+  cart.getElementsByClassName('sqs-pill-shopping-cart-content')[0].tabIndex = 0;
+
   // hide items and subtotal if cart empty
   const items = cart.getElementsByClassName('total-quantity')[0].textContent;
   if (parseInt(items) === 0) {
