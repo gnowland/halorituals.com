@@ -33,6 +33,19 @@ const accountMenu = () => {
   const accountMenu = document.getElementById('account-navigation');
   const cart = document.getElementsByClassName('sqs-pill-shopping-cart')[0];
   cart.prepend(accountMenu);
+  // hide items and subtotal if cart empty
+  const items = cart.getElementsByClassName('total-quantity')[0].textContent;
+  if (parseInt(items) === 0) {
+    cart.classList.add('cart-empty');
+  } else {
+    cart.classList.remove('cart-empty');
+  }
+  const addToCartButtons = document.getElementsByClassName('sqs-add-to-cart-button');
+  for (let i = 0; i < addToCartButtons.length; i++ ) {
+    addToCartButtons[i].addEventListener("click", () => {
+      cart.classList.remove('cart-empty');
+    });
+  }
 }
 
 // The event subscription that fires when the page is ready
