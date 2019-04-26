@@ -49,6 +49,12 @@ Finally, deploy:
 yarn deploy
 ```
 
+or
+
+```
+yarn deploy:prod
+```
+
 ### Dependencies
 
 Five Template depends on the following Squarespace modules for development:
@@ -82,7 +88,7 @@ Runs watch, and simultaneously launches sqs-server. By default this runs on loca
 yarn start -p PORT
 ```
 
-#### `yarn deploy [options]`
+#### `yarn deploy[:prod] [options]`
 
 Deploys your built template to production using git. If not already configured, initializes a git repo for deployment in your build folder. Note this is separate from your source repository, and will only contain the production built template.
 
@@ -91,6 +97,14 @@ By default your deployment will be commited with just a timestamp message. If yo
 ```
 yarn deploy -m "your message"
 ```
+
+When you want to deploy the minified/uglified scripts and production-ready assests use
+
+```
+yarn deploy:prod
+```
+
+*Note: this will strip all console logging/debugging activity!*
 
 ### Project Structure
 
