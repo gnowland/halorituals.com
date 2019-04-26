@@ -1,3 +1,13 @@
+/*!
+ * halorituals.com
+ * @author Gifford Nowland <hi@giffordnowland.com> (https://giffordnowland.com)
+ * @license Apache 2.0
+ */
+
+/**
+ * NOTE: removed sqs-core module include & imageloader function in 900705e
+ */
+
 const accountMenu = () => {
   const accountMenu = document.getElementById('account-navigation');
   const cart = document.getElementsByClassName('sqs-pill-shopping-cart')[0];
