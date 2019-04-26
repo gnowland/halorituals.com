@@ -33,6 +33,11 @@ const accountMenu = () => {
   const accountMenu = document.getElementById('account-navigation');
   const cart = document.getElementsByClassName('sqs-pill-shopping-cart')[0];
 
+  if (typeof cart === "undefined") {
+    console.log('cart undefined');
+    return;
+  }
+
   // Add account menu to cart
   cart.prepend(accountMenu);
 
