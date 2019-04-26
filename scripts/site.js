@@ -35,7 +35,7 @@ const accountMenu = () => {
 
   // Add account menu to cart
   cart.prepend(accountMenu);
-  
+
   // Set tabindex for accessability
   cart.getElementsByClassName('sqs-pill-shopping-cart-content')[0].tabIndex = 0;
 
@@ -51,17 +51,22 @@ const accountMenu = () => {
     cart.classList.remove('cart-empty');
   }
   const addToCartButtons = document.getElementsByClassName('sqs-add-to-cart-button');
-  for (let i = 0; i < addToCartButtons.length; i++ ) {
+  for (let i = 0; i < addToCartButtons.length; i++) {
     addToCartButtons[i].addEventListener("click", () => {
       cart.classList.remove('cart-empty');
     });
   }
 }
 
-// The event subscription that fires when the page is ready
-window.addEventListener('DOMContentLoaded', function () {
+const init = () => {
   loadAllImages();
   accountMenu();
+};
+
+// The event subscription that fires when the page is ready
+// Wait for Squarespace to initilize first
+window.Squarespace.onInitialize(Y, function () {
+  window.addEventListener('DOMContentLoaded', init);
 });
 
 // The event subscription that fires when the page is resized
