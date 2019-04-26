@@ -53,6 +53,7 @@ body.banner-content-empty.canvas-setting-full-width.top-navigation-alignment-lef
 #account-navigation {
   display: none;
 }
+
 @media screen and (min-width: 641px) {
   body > #account-navigation {
     display: flex;
@@ -72,6 +73,13 @@ body.banner-content-empty.canvas-setting-full-width.top-navigation-alignment-lef
     border: 1px solid rgba(255,255,255, .05);
     color: #333;
     background-color: rgba(255,255,255, .92);
+
+    .user-account-link a {
+      color: #333;
+      &:hover, &:focus {
+        color: @navLinkHoverColor;
+      }
+    }
   }
 }
 
