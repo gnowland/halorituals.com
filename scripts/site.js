@@ -8,9 +8,20 @@
  * NOTE: removed sqs-core module include & imageloader function in 900705e
  */
 
-const accountMenu = () => {
-  const accountMenu = document.getElementById('account-navigation');
+// set up the mutation observer
+const cartExists = new MutationObserver((mutations, me) => {
+  // `mutations` is an array of mutations that occurred
+  // `me` is the MutationObserver instance
   const cart = document.getElementsByClassName('sqs-pill-shopping-cart')[0];
+  if (cart) {
+    accountMenu(cart);
+    me.disconnect(); // stop observing
+    return;
+  }
+});
+
+const accountMenu = (cart) => {
+  const accountMenu = document.getElementById('account-navigation');
   // Bail if cart lement does not exist or this scrip has ran already
   if (typeof cart === "undefined") {
     console.log('nocart');
@@ -43,7 +54,11 @@ const accountMenu = () => {
 }
 
 const init = () => {
-  accountMenu();
+  // start observing
+  cartExists.observe(document, {
+    childList: true,
+    subtree: true
+  });
 };
 
 // The event subscription that fires when the page is ready
