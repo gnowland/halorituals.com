@@ -4,7 +4,7 @@ const webpack = require('webpack');
 const path = require('path');
 const pkg = require(__dirname + '/package.json');
 
-const IS_PRODUCTION = process.env.NODE_ENV === 'production';
+const IS_PRODUCTION = true; //process.env.NODE_ENV === 'production';
 
 const siteJs = ['./scripts/site-bundle.js', './scripts/site.js']
 
