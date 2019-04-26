@@ -60,7 +60,7 @@ Five Template also depends on the following modules at runtime:
 
 * [@squarespace/core](https://github.com/Squarespace/squarespace-core) - core Squarespace javascript functionality
 
-*Note: `yarn start` will prompt you to install the [Squarespace Local Development Server](developers.squarespace.com/local-development) if you haven't already.*
+*Note: `yarn start` will prompt you to install the [Squarespace Local Development Server](https://developers.squarespace.com/local-development) if you haven't already.*
 
 
 ### Full ~~npm~~ yarn script reference
@@ -74,22 +74,22 @@ Cleans the build folder, copies squarespace files (jsont, less, assets folder co
 
 Runs build, then watches the source folder for changes to squarespace files and javascript, automatically updating the built template for each change.
 
-#### `yarn start [-- options]`
+#### `yarn start [options]`
 
 Runs watch, and simultaneously launches sqs-server. By default this runs on localhost:9000. If you want to use another port use the command:
 
 ```
-yarn start -- -p PORT
+yarn start -p PORT
 ```
 
-#### `yarn deploy [-- options]`
+#### `yarn deploy [options]`
 
 Deploys your built template to production using git. If not already configured, initializes a git repo for deployment in your build folder. Note this is separate from your source repository, and will only contain the production built template.
 
 By default your deployment will be commited with just a timestamp message. If you want to provide a custom message use the command:
 
 ```
-yarn deploy -- -m "your message"
+yarn deploy -m "your message"
 ```
 
 ### Project Structure
