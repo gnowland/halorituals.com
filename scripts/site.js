@@ -63,13 +63,17 @@ const init = () => {
   accountMenu();
 };
 
+window.addEventListener('DOMContentLoaded', () => {
+  init();
+});
+
 // The event subscription that fires when the page is ready
 // Wait for Squarespace to initilize first
-window.Squarespace.onInitialize(Y, function () {
-  window.addEventListener('DOMContentLoaded', init);
+window.Squarespace.onInitialize(Y, () => {
+  init();
 });
 
 // The event subscription that fires when the page is resized
-window.addEventListener('resize', function () {
+window.addEventListener('resize', () => {
   loadAllImages();
 });
