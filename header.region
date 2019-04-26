@@ -10,11 +10,11 @@
   {.if template.mobileStylesEnabled}{.or}<!-- Mobile Styles Are Disabled -->{.end}
   <body class="{squarespace.page-classes}{.section website}{.if logoImageUrl} has-logo-image{.or} no-logo-image{.end}{.end}{.section collection}{.background-source-video?} has-page-thumbnail{.or}{.section mainImage} has-page-thumbnail{.end}{.end}{.end}" id="{squarespace.page-id}" ontouchstart="">
 
+		{@|apply account-navigation.block}
+
 		{.if template.mobileStylesEnabled}
 		<squarespace:navigation navigationId="mainNav" template="mobile-navigation" />
 		{.end}
-
-		{@|apply account-navigation.block}
 
 	  <div id="canvas-wrapper">
 	  	<div id="canvas">

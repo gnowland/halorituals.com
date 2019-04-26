@@ -27,6 +27,9 @@
         {.end}
       </li>
     {.end}
+
+    <squarespace:navigation navigationId="secondaryNav" template="mobile-secondary-navigation" />
+
     {.if websiteSettings.userAccountsSettings.loginAllowed}
       <li class="user-account-link">
         <a href="#"><i class="icon-user"></i>
