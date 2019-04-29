@@ -40,15 +40,21 @@ const cartVisibility = (cart) => {
   }).observe(totalQuantity, { childList: true });
 }
 
+document.onreadystatechange = () => {
+  if (document.readyState === 'interactive') {
+    // Wait for cart to exist, then run cart updates
+    new MutationObserver((mutations, observer) => {
+      const cart = document.getElementsByClassName('sqs-pill-shopping-cart')[0];
+      if (cart) {
+        observer.disconnect(); // stop observing
+        accountMenu(cart);
+        cartVisibility(cart);
+      }
+    }).observe(document.body, { childList: true });
+  }
+}
+
 // The event subscription that fires when the page is ready
 window.addEventListener('DOMContentLoaded', () => {
-  // Wait for cart to exist
-  new MutationObserver((mutations, observer) => {
-    const cart = document.getElementsByClassName('sqs-pill-shopping-cart')[0];
-    if (cart) {
-      observer.disconnect(); // stop observing
-      accountMenu(cart);
-      cartVisibility(cart);
     }
-  }).observe(document.body, { childList: true });
 });
