@@ -2,27 +2,12 @@
  * halorituals.com
  * @author Gifford Nowland <hi@giffordnowland.com> (https://giffordnowland.com)
  * @license Apache 2.0
+ *
+ * NOTE: removed sqs-core module include & imageloader function in commit 900705e
  */
 
-/**
- * NOTE: removed sqs-core module include & imageloader function in 900705e
- */
-
-// set up the mutation observer
-const cartExists = new MutationObserver((mutations, me) => {
-  // `mutations` is an array of mutations that occurred
-  // `me` is the MutationObserver instance
-  const cart = document.getElementsByClassName('sqs-pill-shopping-cart')[0];
-  if (cart) {
-    accountMenu(cart);
-    me.disconnect(); // stop observing
-    return;
-  }
-});
-
-const accountMenu = (cart) => {
+ const accountMenu = (cart) => {
   const accountMenu = document.getElementById('account-navigation');
-
   // Add account menu to cart
   cart.prepend(accountMenu);
 
@@ -36,23 +21,35 @@ const accountMenu = (cart) => {
   // hide items and subtotal if cart empty
   const items = cart.getElementsByClassName('total-quantity')[0].textContent;
   if (parseInt(items) === 0) {
-    cart.classList.add('cart-empty');
+    cart.classList.remove('cart-visible');
   } else {
-    cart.classList.remove('cart-empty');
-  }
-  const addToCartButtons = document.getElementsByClassName('sqs-add-to-cart-button');
-  for (let i = 0; i < addToCartButtons.length; i++) {
-    addToCartButtons[i].addEventListener("click", () => {
-      cart.classList.remove('cart-empty');
-    });
+    cart.classList.add('cart-visible');
   }
 }
 
+const cartVisibility = (cart) => {
+  // Show cart info on update
+  const totalQuantity = cart.getElementsByClassName('total-quantity')[0];
+  new MutationObserver((mutations, observer) => {
+    const items = totalQuantity.textContent;
+    if (parseInt(items) > 0) {
+      cart.classList.add('cart-visible');
+    } else {
+      cart.classList.remove('cart-visible');
+    }
+  }).observe(totalQuantity, { childList: true });
+}
+
 const init = () => {
-  // start observing
-  cartExists.observe(document.body, {
-    childList: true
-  });
+  // Wait for cart to exist
+  new MutationObserver((mutations, observer) => {
+    const cart = document.getElementsByClassName('sqs-pill-shopping-cart')[0];
+    if (cart) {
+      observer.disconnect(); // stop observing
+      accountMenu(cart);
+      cartVisibility(cart);
+    }
+  }).observe(document.body, { childList: true });
 };
 
 // The event subscription that fires when the page is ready
