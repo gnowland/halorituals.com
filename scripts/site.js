@@ -40,7 +40,8 @@ const cartVisibility = (cart) => {
   }).observe(totalQuantity, { childList: true });
 }
 
-const init = () => {
+// The event subscription that fires when the page is ready
+window.addEventListener('DOMContentLoaded', () => {
   // Wait for cart to exist
   new MutationObserver((mutations, observer) => {
     const cart = document.getElementsByClassName('sqs-pill-shopping-cart')[0];
@@ -50,15 +51,4 @@ const init = () => {
       cartVisibility(cart);
     }
   }).observe(document.body, { childList: true });
-};
-
-// The event subscription that fires when the page is ready
-window.addEventListener('DOMContentLoaded', () => {
-  init();
 });
-
-document.onreadystatechange = () => {
-  if (document.readyState === 'complete') {
-    init();
-  }
-}
