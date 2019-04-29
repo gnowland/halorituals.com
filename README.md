@@ -49,7 +49,7 @@ Finally, deploy:
 yarn deploy
 ```
 
-or
+or deploy with minified/uglified scripts and production-ready assests:
 
 ```
 yarn deploy:prod
