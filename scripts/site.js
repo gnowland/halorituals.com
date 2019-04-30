@@ -5,7 +5,6 @@
  *
  * NOTE: removed sqs-core module include & imageloader function in commit 900705e
  */
-
  const accountMenu = (cart) => {
   const accountMenu = document.getElementById('account-navigation');
   // Add account menu to cart

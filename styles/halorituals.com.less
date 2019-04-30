@@ -105,8 +105,11 @@ body.banner-content-empty.canvas-setting-full-width.top-navigation-alignment-lef
   }
 }
 
-// Show cart at all times
+//
+// Shopping Cart
+//
 .sqs-pill-shopping-cart {
+  // Show cart at all times
   visibility: visible !important;
   opacity: 1 !important;
   transform: scale(1) !important;
@@ -203,14 +206,17 @@ body.banner-content-empty.canvas-setting-full-width.top-navigation-alignment-lef
     display: none;
   }
 }
+
 @media only screen and (max-width: 700px) {
   .absolute-cart-box {
     right: 0;
+    top: auto !important;
   }
   .sqs-pill-shopping-cart {
     background-color: rgba(17, 17, 17, 1);
   }
 }
+
 @media only screen and (min-width: 701px) {
   .top-navigation-position-above-banner .absolute-cart-box {
     top: 13px;
@@ -226,6 +232,7 @@ body.banner-content-empty.canvas-setting-full-width.top-navigation-alignment-lef
       }
     }
   }
+
   .sqs-pill-shopping-cart {
     box-shadow: none;
     border: 1px solid rgba(255,255,255, .05);
@@ -236,6 +243,7 @@ body.banner-content-empty.canvas-setting-full-width.top-navigation-alignment-lef
       border-right: 1px solid #d1d1d1;
     }
   }
+
   .sqs-pill-shopping-cart-content {
     &.dark:hover, &.dark:focus,
     &:hover, &:focus { 
