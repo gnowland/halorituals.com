@@ -39,19 +39,49 @@ const cartVisibility = (cart) => {
   }).observe(totalQuantity, { childList: true });
 }
 
+let cartSticky = false;
+const stickyCart = () => {
+  const main = document.getElementById('canvas-wrapper');
+  const cart = document.getElementsByClassName('absolute-cart-box')[0];
+  if (!cart || !main) return;
+
+  const scroll = window.pageYOffset;
+  const mainOffset = main.offsetTop - scroll;
+
+  if (mainOffset > 0 ) {
+    cart.style.top = 11 + mainOffset + 'px';
+    cartSticky = true;
+  } else if (cartSticky) {
+    cart.style.top = '';
+    cartSticky = false;
+  }
+}
+
+// Use readystate 'interactive' to wire up the mutationobserver super early
 document.onreadystatechange = () => {
   if (document.readyState === 'interactive') {
     // Wait for cart to exist, then run cart updates
     new MutationObserver((mutations, observer) => {
       const cart = document.getElementsByClassName('sqs-pill-shopping-cart')[0];
+      const bar = document.getElementsByClassName('sqs-announcement-bar')[0];
+      if (cart && bar) observer.disconnect(); // stop observing
       if (cart) {
-        observer.disconnect(); // stop observing
         accountMenu(cart);
         cartVisibility(cart);
       }
-    }).observe(document.body, { childList: true });
+      if (bar) {
+        stickyCart();
+        bar.getElementsByClassName('sqs-announcement-bar-close')[0].addEventListener("click", () => {
+          document.getElementsByClassName('absolute-cart-box')[0].style.top = '';
+          cartSticky = false;
+        });
+      }
+    }).observe(document.body, { childList: true, subtree: false });
   }
 }
+
+window.onscroll = stickyCart;
+window.addEventListener('orientationchange', stickyCart);
 
 // The event subscription that fires when the page is ready
 window.addEventListener('DOMContentLoaded', () => {
