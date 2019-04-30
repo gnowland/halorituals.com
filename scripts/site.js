@@ -85,5 +85,4 @@ window.addEventListener('orientationchange', stickyCart);
 
 // The event subscription that fires when the page is ready
 window.addEventListener('DOMContentLoaded', () => {
-    }
 });
