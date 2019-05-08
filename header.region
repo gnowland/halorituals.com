@@ -4,6 +4,7 @@
 	  {.if template.mobileStylesEnabled}
 	  <meta name="viewport" content="width=device-width, initial-scale=1">
 	  {.end}
+		<meta name="google-site-verification" content="8O9fblXTzgugCWHzvqv5otS6Sfdkhjy7szO1ayTL-Wk" />
     {squarespace-headers}
     <squarespace:script src="site-bundle.js" combo="false" />
   </head>
