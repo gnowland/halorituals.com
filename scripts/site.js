@@ -83,6 +83,23 @@ document.onreadystatechange = () => {
 window.onscroll = stickyCart;
 window.addEventListener('orientationchange', stickyCart);
 
-// The event subscription that fires when the page is ready
-window.addEventListener('DOMContentLoaded', () => {
-});
+// // The event subscription that fires when the page is ready
+// window.addEventListener('DOMContentLoaded', () => {
+//   // Add buy now buttons
+//   const productList = document.getElementById('productList');
+//   if (productList) {
+//     const products = productList.getElementsByTagName('a');
+//     for (let i = 0; i < products.length; i++) {
+//       const product = products[i];
+//       const productId = product.getAttribute('data-item-id');
+//       // const collectionId = undefined;
+//       // const productType = undefined;
+//       // const useCustomLabel = undefined;
+//       product.innerHTML += '<div class="sqs-add-to-cart-button-wrapper" style="visibility: visible;">';
+//       product.innerHTML += '<div class="sqs-add-to-cart-button" data-collection-id="5c87b46c971a182c9007f0f3" data-item-id="5cae0e79e4966bff900104e8" data-product-type="1" data-use-custom-label="true" data-original-label="Add to Cart" id="yui_3_17_2_1_1556575596335_144">';
+//       //product.innerHTML += '<div class="sqs-add-to-cart-button" data-collection-id="' + collectionId + '" data-item-id="' + productId + '" data-product-type="' + productType + '" data-use-custom-label="' + useCustomLabel + '" data-original-label="Add to Cart" id="yui_3_17_2_1_1556575596335_144">
+//       product.innerHTML += '<div class="sqs-add-to-cart-button-inner">Add to Cart</div>';
+//       product.innerHTML += '</div></div>';
+//     }
+//   }
+// });
